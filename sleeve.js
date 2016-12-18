@@ -29,7 +29,7 @@ var slotX = 20; // Distance from left
 var fixX = 40; // Distance from right
 var needle = 0.2; // Hole dia
 
-var layout = 0; // Place ribbon under sleeve
+var layout = 1; // Place ribbon under sleeve
 
 lenght = lenght+padding;
 width = width+2*padding;
@@ -59,12 +59,12 @@ this.paths = {
   arc2: new makerjs.paths.Arc([lenght-radius, width-radius], radius-offset, 0, 90),
   line3: new makerjs.paths.Line([lenght-radius, width-offset], [radius, width-offset]),
 
-  myRbLine1: new makerjs.paths.Line([lenght-fixX, width/2-ribbon/2+offset], [lenght-fixX+ribbon, width/2-ribbon/2+offset]),
-  myRbLine2: new makerjs.paths.Line([lenght-fixX, width/2+ribbon/2-offset], [lenght-fixX+ribbon, width/2+ribbon/2-offset]),
-  myRbLine3: new makerjs.paths.Line([lenght+fixX-ribbon-2*offset, width/2-ribbon/2+offset], [lenght+fixX-2*offset+0.5*ribbon, width/2-ribbon/2+offset]),
-  myRbLine4: new makerjs.paths.Line([lenght+fixX-ribbon-2*offset, width/2+ribbon/2-offset], [lenght+fixX-2*offset+0.5*ribbon, width/2+ribbon/2-offset]),
+  myRbLine1: new makerjs.paths.Line([lenght-fixX, width/2-ribbon/2+offset+place], [lenght-fixX+ribbon, width/2-ribbon/2+offset+place]),
+  myRbLine2: new makerjs.paths.Line([lenght-fixX, width/2+ribbon/2-offset+place], [lenght-fixX+ribbon, width/2+ribbon/2-offset+place]),
+  myRbLine3: new makerjs.paths.Line([lenght+fixX-ribbon-2*offset, width/2-ribbon/2+offset+place], [lenght+fixX-2*offset+0.5*ribbon, width/2-ribbon/2+offset+place]),
+  myRbLine4: new makerjs.paths.Line([lenght+fixX-ribbon-2*offset, width/2+ribbon/2-offset+place], [lenght+fixX-2*offset+0.5*ribbon, width/2+ribbon/2-offset+place]),
 
-  myCircle: new makerjs.model.move(new makerjs.paths.Circle([0, 0], needle),[radius, offset]),
+  //myCircle: new makerjs.model.move(new makerjs.paths.Circle([0, 0], needle),[radius, offset]),
 
 };
 
